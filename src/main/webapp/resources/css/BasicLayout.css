@@ -1,0 +1,72 @@
+html {
+    display: block;
+}
+
+body {
+    font-family: Verdana, Lucida, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    display: block;
+}
+
+#visual-portal-wrapper {
+    margin: 0 auto;
+    padding: 0;
+    width: 1015px;
+}
+
+/** Header **/
+#portal-header {
+    background: url("http://gemeente.groningen.nl/portal_css/Groningen%20Pronkjewail%20Theme/bg.header.png") no-repeat scroll left bottom white;
+    height: 210px;
+    position: relative;
+}
+
+#gr-utility-menu {
+    float: left;
+    padding-left: 35px;
+    width: 980px;
+    position: relative;
+    height: 45px;
+}
+
+/** Logo **/
+#portal-logo img {
+    border: 0;
+    margin-left: 45px;
+    margin-top: 30px;
+    padding: 0;
+}
+
+/** Below header **/
+#gr-below-header, #content {
+    padding: 0 15px 0 45px;
+}
+
+#breadcrubms {
+    padding-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2.title {
+    margin: 0 15px 10px 0;
+    border: medium none;
+    line-height: 1em;
+    font-weight: normal;
+    color: #EA3033;
+    font-family: 'Univers-Light-NormalRegular', sans-serif;
+    font-size: 4em;
+}
+
+input.controllButton {
+    background: #EA3033;
+    color: white;
+    border: none;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:input="http://java.sun.com/jsf/composite/input"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<composite:interface componentType="">
+    <composite:attribute name="name" required="true"/>
+    <composite:attribute name="label" required="true"/>
+    <composite:attribute name="value" required="true" type="nl.voorbeeldsite.formulieren.global.Persoon" />
+    <composite:facet name=""
+    <composite:attribute name="visible" default="true" type="java.lang.Boolean"/>
+    <composite:attribute name="required" default="false" type="java.lang.Boolean"/>
+</composite:interface>
+
+<composite:implementation>
+    <h:panelGroup layout="block" rendered="#{cc.attrs.visible}" styleClass="input">
+        <h:panelGroup layout="block" rendered="#{cc.attrs.visible}" styleClass="input">
+            <input:text value="#{cc.attrs.value.voornaam}" label="Voornaam" name="vname" required="true" />
+            <input:text value="#{cc.attrs.value.achternaam}" label="Achternaam" name="aname" required="true" />
+            <input:jdate label="GeboorteDatum" name="gebdat" value="#{cc.attrs.value.geboortedatum}" />
+            <input:select label="Geslacht" selectItems="#{cc.attrs.value.geslachtSelectItems}" value="Geslacht" />
+        </h:panelGroup>
+    </h:panelGroup>
+</composite:implementation>
+</html>

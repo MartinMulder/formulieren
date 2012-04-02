@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<composite:interface componentType="">
+    <composite:attribute name="name" required="true"/>
+    <composite:attribute name="label" required="true"/>
+    <composite:attribute name="value" required="true"/>
+    <composite:attribute name="visible" default="true" type="java.lang.Boolean"/>
+    <composite:attribute name="required" default="false" type="java.lang.Boolean"/>
+</composite:interface>
+
+<composite:implementation>
+    <h:panelGroup layout="block" rendered="#{cc.attrs.visible}" styleClass="input">
+        <h:outputLabel id="label" value="#{cc.attrs.label}" for="input"/>
+        <h:outputText value=" *" title="verplicht" rendered="#{cc.attrs.required}"/>
+        <t:message for="input" showDetail="true" showSummary="false"
+                   tooltip="false" detailFormat=" ({0})"
+                   errorClass="errorMessage" infoClass="infoMessage"
+                   fatalClass="fatalMessage" warnClass="warningMessage"/>
+
+        <br/>
+        <h:inputText id="input" value="#{cc.attrs.value}" label="#{cc.attrs.label}"
+                     required="#{cc.attrs.required}" styleClass="datepicker">
+            <f:convertDateTime pattern="dd-mm-yyyy"/>
+            <ui:insert/>
+        </h:inputText>
+        <h:outputScript>
+        $(".datepicker").datepicker({
+    showOn: "button",
+    buttonImage: "#{resource['images:calendar.png']}",
+    buttonImageOnly: true,
+    dateFormat: 'dd-mm-yy'
+});
+    </h:outputScript>
+    </h:panelGroup>
+</composite:implementation>
+</html>

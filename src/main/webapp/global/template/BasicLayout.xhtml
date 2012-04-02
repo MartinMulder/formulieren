@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <h:outputScript name="jsf.js" library="javax.faces"/>
+    <h:outputScript name="jquery.min.js" library="javascript" />
+    <h:outputScript name="jquery-ui.min.js" library="javascript" />
+    <h:outputStylesheet name="jquery-ui.css" library="css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- <ui:insert name="head"/> -->
+    <title><ui:insert name="title"/></title>
+</h:head>
+<h:body>
+    <h1>Form</h1>
+
+    <div id="content">
+        <h:form id="form">
+            <ui:insert name="content"/>
+
+            <br/><br/>
+            <h:commandButton value="Vorige" action="#{formBean.previous}" styleClass="controllButton"/>
+            <h:commandButton value="Volgende" action="#{formBean.next}" styleClass="controllButton"/>
+
+        </h:form>
+    </div>
+    <script type="text/javascript">
+        $('input:visible:first').focus();
+    </script>
+</h:body>
+</html>

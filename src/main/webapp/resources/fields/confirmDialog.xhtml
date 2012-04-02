@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:fields="http://java.sun.com/jsf/composite/fields"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+    <composite:attribute name="name" required="true"/>
+    <composite:attribute name="title" required="false" default="Bevestigen"/>
+    <composite:attribute name="message" required="true"/>
+    <composite:attribute name="actionLabel" required="false" default="Bevestigen"/>
+    <composite:attribute name="actionMethod" required="true" method-signature="void action()"/>
+</composite:interface>
+
+<composite:implementation>
+    <rich:popupPanel id="#{cc.attrs.name}" modal="true" autosized="true" width="700" top="150"
+                     rendered="#{permissionBean['ztcplus,Beheer']}">
+        <f:facet name="header">
+            #{cc.attrs.title}
+        </f:facet>
+        <f:facet name="controls">
+            <h:graphicImage value="/global/images/closeIcon.gif"
+                            onclick="#{rich:component(cc.attrs.name)}.hide(); return false;"/>
+        </f:facet>
+
+        <h:form id="#{id}Form">
+
+            <h:messages styleClass="messages" errorClass="error" globalOnly="false"/>
+
+            <fields:hr name="#{cc.attrs.message}" />
+            <br />
+
+            <div class="buttonbar">
+                <a4j:commandButton action="#{cc.attrs.actionMethod}" styleClass="tick positive"
+                                   render="@form" value="#{cc.attrs.actionLabel}" status="ajaxLoader"
+                                   oncomplete="mp_closePopupPanel(#{rich:component(cc.attrs.name)})"/>
+                <a4j:commandButton styleClass="reset negative" value="Annuleren"
+                                   onclick="#{rich:component(cc.attrs.name)}.hide(); return false;"/>
+            </div>
+        </h:form>
+    </rich:popupPanel>
+</composite:implementation>
+</html>

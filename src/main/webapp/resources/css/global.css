@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Univers-Light-NormalRegular';
+    src: url('universs-webfont.eot');
+    src: local('☺'), url('universs-webfont.woff') format('woff'), url('universs-webfont.ttf') format('truetype'), url('universs-webfont.svg#webfontyyhOQnbn') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Univers55Medium';
+    src: url('unive1-webfont.eot');
+    src: local('☺'), url('http://gemeente.groningen.nl/++resource++groningen.theme.stylesheets/unive1-webfont.woff') format('woff'), url('unive1-webfont.ttf') format('truetype'), url('unive1-webfont.svg#webfontVkCepCey') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.inputField, .helpText {
+    width: 50%;
+}
+
+.input {
+    padding-bottom: 1.4em;
+    border-bottom: 1.0px solid #F0F0EE;
+}
+
+.formFieldPanelWrapper {
+    width: 100%;
+}
+
+.input label {
+    font-weight: bold;
+}
+
+/** Fields **/
+.input input, .input select {
+    border: 1.0px solid black;
+    background: transparent;
+}
+
+.heading1 {
+    border: medium none;
+    line-height: 1em;
+    font-weight: normal;
+    color: #EA3033;
+    font-family: 'Univers-Light-NormalRegular', sans-serif;
+    font-size: 2em;
+}

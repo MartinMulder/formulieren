@@ -1,0 +1,16 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:input="http://java.sun.com/jsf/composite/input"
+                template="global/template/BasicLayout.xhtml">
+
+    <ui:define name="title">Home</ui:define>
+
+    <ui:define name="content">
+
+    <input:persoon value="#{formBean.persoon}" name="Persoon" label="Persoon" />
+    <input:jdate label="ingangsDatum" value="#{formBean.ingangsDatum}" name="ingangsDatum" />
+        <br/><br/>
+        <input:textArea value="" label="Opmerkingen" name="Opmerkingen" />
+    </ui:define>
+
+</ui:composition>

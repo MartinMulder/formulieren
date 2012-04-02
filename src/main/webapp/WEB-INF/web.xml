@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>Form</display-name>
+
+    <context-param>
+        <description>
+            Specifies where the state should be saved on the client
+            of server default is 'server' (Note that if the state is saved on the
+            client, the state of the entire view is rendered to a hidden field on
+            the page).
+        </description>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>server</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>com.sun.faces.enableMissingResourceLibraryDetection</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <context-param>
+        <description>
+            The default suffix for extension-mapped resources that
+            contain JSF components. Default is '.jsp'.
+        </description>
+        <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+        <param-value>.xhtml</param-value>
+    </context-param>
+
+    <context-param>
+        <description>
+            The xhtml pages refresh period is controlled by facelets
+            and set by default to -1 (no refresh) for performance reasons. When
+            developing, you will find it useful not to have to restart jboss when
+            performing changes in xhtml pages.
+        </description>
+        <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
+        <param-value>0</param-value>
+    </context-param>
+
+
+    <context-param>
+        <description>
+            Set this flag to true if you want the JSF Reference
+            Implementation to validate the XML in your faces-config.xml resources
+            against the DTD. Default value is false.
+        </description>
+        <param-name>com.sun.faces.validateXml</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <context-param>
+        <description>
+            Set this flag to true if you want the JSF Reference
+            Implementation to verify that all of the application objects you have
+            configured (components, converters, renderers, and validators) can be
+            successfully created. Default value is false.
+        </description>
+        <param-name>com.sun.faces.verifyObjects</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <context-param>
+        <description>
+            The JSF implementation can log many configuration
+            messages at startup, including the value of every faces context
+            param. This is done for every JSF application, which can get pretty
+            annoying. So by default, these startup messages are supressed.
+        </description>
+        <param-name>com.sun.faces.displayConfiguration</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <context-param>
+        <description>
+            Number of Views to be stored in the session when
+            Server-Side State Saving is being used. Default is 15.
+        </description>
+        <param-name>com.sun.faces.numberOfViewsInSession</param-name>
+        <param-value>15</param-value>
+    </context-param>
+
+    <context-param>
+        <description>
+            Location of the spring xml configuration file to be loaded.
+        </description>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:application-context.xml</param-value>
+    </context-param>
+
+    <!-- jboss el expressions allow method params -->
+    <context-param>
+        <param-name>com.sun.faces.expressionFactory</param-name>
+        <param-value>org.jboss.el.ExpressionFactoryImpl</param-value>
+    </context-param>
+
+    <!-- Listeners -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+    <!-- Servlets -->
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>Pretty Filter</filter-name>
+        <filter-class>com.ocpsoft.pretty.PrettyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Pretty Filter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>Wizard Filter</filter-name>
+        <filter-class>nl.voorbeeldsite.formulieren.WizardRestrictStepFilter</filter-class>
+    </filter>
+    <filter-mapping>
+
+        <filter-name>Wizard Filter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>MyFacesExtensionsFilter</filter-name>
+        <filter-class>org.apache.myfaces.webapp.filter.ExtensionsFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>MyFacesExtensionsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>
+            index.xhtml
+        </welcome-file>
+    </welcome-file-list>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>

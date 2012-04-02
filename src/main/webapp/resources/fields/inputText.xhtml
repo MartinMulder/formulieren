@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="">
+    <composite:attribute name="name" required="true"/>
+    <composite:attribute name="label" required="true"/>
+    <composite:attribute name="value" required="true"/>
+    <composite:attribute name="required" default="false" type="java.lang.Boolean"/>
+</composite:interface>
+
+<composite:implementation>
+    <h:panelGroup>
+        <h:inputText id="#{cc.attrs.name}" value="#{cc.attrs.value}" label="#{cc.attrs.label}" required="#{cc.attrs.required}">
+            <ui:insert />
+        </h:inputText>
+        <t:message for="#{cc.attrs.name}"
+                   detailFormat="!" tooltip="true"
+                   errorClass="errorMessage" infoClass="infoMessage"
+                   fatalClass="fatalMessage" warnClass="warningMessage"/>
+    </h:panelGroup>
+</composite:implementation>
+
+
+</html>

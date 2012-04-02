@@ -1,0 +1,262 @@
+body {
+	margin: 0px;
+}
+
+#ajaxLoaderDiv{
+	position: absolute;
+	width: 98%;
+	height: 55%;
+	z-index: 99999;
+	background-image: url("../images/ajax-loader.gif");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#headerDiv {
+	display: block;
+	clear: both;
+	background-color: #FFF;
+	float: left;
+	height: auto !important;
+	min-height: 103px;
+	width: 100%;
+}
+
+#headerDiv img {
+	float: left;
+}
+
+div#mainMenu {
+	display: block;
+	clear: both;
+	float: left;
+	width: 100%;
+}
+
+div#body {
+	display: block;
+	clear: both;
+	float: left;
+	width: 100%;
+}
+
+#footerDiv {
+	display: block;
+	clear: both;
+	float: left;
+	width: 100%;
+}
+
+#loginPanel {
+	clear: none;
+	display: inline;
+	float: right;
+	width: 260px;
+	height: auto !important;
+	min-height: 103px;
+}
+
+.rich-toolbar a {
+	color: #fff;
+}
+
+rich-tab-active {
+	background-image: none;
+	border-color: #FF0033;
+	border-width: 2px 2px 0px 2px;
+	background-color: #FFF;
+	font-weight: bold;
+}
+
+.rich-tabpanel-content {
+	background-color: #FFF;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.rich-tabpanel-content .rich-panel-body{
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.optionHeader {
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+
+#loginCommand {
+	float: right;
+}
+
+#loggedInHeader {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.loggedInRowClass {
+	height: 22px;
+}
+
+/*
+	Datagrid
+*/
+.odd-row {
+	background-color: #ECF3FE;
+}
+
+.even-row {
+	background-color: #FCFFFE;
+}
+
+.active-row {
+	background-color: #FFEBDA;
+}
+
+/*
+	PanelGrid General
+*/
+.GeneralPanelGrid {
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.GeneralPanelGridHeader {
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+	font-size: 12px;
+}
+
+.GeneralOutputLabel {
+	font-weight: bold;
+	background-color: #f1f1f1;
+	border-bottom: 1px solid #ccc;
+	padding: 5px 15px 5px 15px;
+}
+
+.GeneralOutputText {
+	padding: 5px 15px 5px 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+/*
+	Opmaak errormeldingen
+*/
+.info {
+	display: block;
+	clear: both;
+	background-color: #fff;
+	width: 90%;
+	border: 1px solid #2065C0;
+	padding: 10px;
+	margin: auto;
+    font-size: 11px;
+    font-family: Arial,Verdana,sans-serif
+}
+
+.info a {
+	color: #2065C0;
+	font-weight: bold;
+}
+
+.info .header {
+	display: block;
+	height: 20px;
+	color: #2065C0;
+	display: inline;
+	font-size: 14px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+    padding-left: 20px;
+    font-weight: bold;
+    background-image: url('../images/info.gif');
+    background-repeat: no-repeat;
+}
+
+.error {
+	display: block;
+	clear: both;
+	background-color: #fcc;
+	width: 99%;
+	border: 1px solid #c00;
+	font-size: 11px;
+	padding: 10px;
+	margin: 5px;
+	margin-bottom: 10px;
+	color: #c00;
+    font-size: 11px;
+    font-family: Arial,Verdana,sans-serif;
+}
+
+.error .header {
+	display: block;
+	height: 20px;
+    vertical-align: middle;;
+	display: inline;
+	font-size: 13px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+    padding-left: 20px;
+    font-weight: bold;
+    background-image: url('../images/warning.gif');
+    background-repeat: no-repeat;
+}
+
+/*
+	Maak zaak aan
+*/
+.mainGridRow{
+}
+
+.mainGridColumn{
+	vertical-align: top;
+}
+
+.maakZaakAanLabel{
+	width: 150px;
+}
+
+.maakZaakAanInput{
+	width: 175px;
+}
+
+/* ((.maakZaakAanLable.width + .maakZaakAanInput.width) * 2) + cellspacing */
+.maakZaakAanOneCol{
+	width: 690px;
+}
+
+.maakZaakAanFourCol{
+	width: 535px;
+}
+
+.maakZaakAanInput input{
+	width: 170px;
+}
+
+.maakZaakAanInput rich-calendar-button{
+	display: none;
+} 
+
+.maakZaakAanInput select{
+	width: 170px;
+}
+
+.maakZaakAanOption{
+}
+.searchHeader {
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+.icon {
+	padding-right: 0.5em;
+}

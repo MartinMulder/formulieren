@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="">
+    <composite:attribute name="name" required="true"/>
+    <composite:attribute name="alt" required="true"/>
+    <composite:attribute name="style" required="false"/>
+</composite:interface>
+
+<composite:implementation>
+   	<h:graphicImage width="16" height="16" class="icon" value="/global/images/icons/#{cc.attrs.name}.png" alt="#{cc.attrs.alt}" title="#{cc.attrs.alt}" style="#{cc.attrs.style}"/>
+</composite:implementation>
+
+
+</html>
