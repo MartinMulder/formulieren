@@ -15,12 +15,13 @@ public class FormBean {
     private Persoon persoon;
     private Date ingangsDatum;
 
+    public FormBean() {
+        this.persoon = new Persoon();
+        this.ingangsDatum = new Date();
+    }
+
     public Persoon getPersoon() {
-	    if (this.persoon == null) {
-	    	return new Persoon();
-	    } else {
-         	return persoon;
-	    }
+	return persoon;
     }
 
     public void setPersoon(Persoon persoon) {
@@ -28,11 +29,7 @@ public class FormBean {
     }
 
     public Date getIngangsDatum() {
-        if (ingangsDatum == null) {
-            return new Date();
-        } else {
-            return ingangsDatum;
-        }
+        return ingangsDatum;
     }
 
     public void setIngangsDatum(Date ingangsDatum) {
